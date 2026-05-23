@@ -36,7 +36,7 @@ make bootstrap
 | Domínio      | Repositório     | Responsabilidade              |
 |-------------|----------------|-------------------------------|
 | Infra       | lab-infra      | Terraform + LocalStack        |
-| Kubernetes  | lab-k8s        | KIND + Helm                   |
+| Kubernetes  | lab-k8s        | KIND + Gateway API + Helm     |
 | Observability | lab-observability | Prometheus + Grafana      |
 | Messaging   | lab-messaging   | RabbitMQ/Kafka               |
 | GitOps      | lab-gitops      | ArgoCD                        |
