@@ -1,0 +1,35 @@
+# Network policies for inter-domain communication
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-observability-scrape
+  namespace: k8s
+spec:
+  podSelector:
+    matchLabels:
+      app: prometheus
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              name: observability
+  policyTypes:
+    - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-argocd-sync
+  namespace: k8s
+spec:
+  podSelector:
+    matchLabels:
+      app: argocd-argocd-server
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              name: argocd
+  policyTypes:
+    - Ingress

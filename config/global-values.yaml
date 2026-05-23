@@ -1,0 +1,20 @@
+# Global Helm values for all domains
+global:
+  cluster:
+    name: platform-lab
+    domain: cluster.local
+  image:
+    registry: docker.io
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  monitoring:
+    enabled: true
+    namespace: observability
+    port: 9090
